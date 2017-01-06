@@ -17,10 +17,22 @@ const failure = (error) => {
 
 const viewYourSurveysSuccess = (data) => {
   // store.user = data.user;
-  console.log("data is ", data);
-  let newData = {surveys:data.survey};
-  // $('#displayAllCurrentUsersSurveys').show().html(showYourSurveysTemplate(data));
-  $('#displayAllCurrentUsersSurveys').show().html(showYourSurveysTemplate(newData));
+  // console.log("data is ", data);
+  let fixedData = data.survey.map(function(survey) {
+    survey.answers = survey.answers.reduce((prev, curr) => {
+      if (!prev[curr]) {
+        prev[curr] = 1;
+      } else {
+        prev[curr]++;
+      }
+      return prev;
+    }, {});
+    return survey;
+  });
+  console.log(fixedData);
+
+  $('#displayAllCurrentUsersSurveys').show().html(showYourSurveysTemplate(data));
+  // $('#displayAllCurrentUsersSurveys').show().html(showYourSurveysTemplate(fixedData));
   $('#myModal1').modal('hide');
   $('#myModal6').modal('show');
 };
@@ -30,7 +42,7 @@ const viewYourSurveysFailure = (data) => {
 };
 
 const questionAppendSuccess = (data) => {
-   store.survey = data.survey;
+  store.survey = data.survey;
   console.log('this is data.survey._id', data.survey._id);
   $('#myModal1').modal('hide');
   $('#questionAppend').trigger('reset');
@@ -47,37 +59,37 @@ const questionAppendFailure = (data) => {
 const deleteSurveySuccess = (data) => {
   console.log(data);
   $('#signInBox')
-      .empty()
-      .append('Image Was Deleted');
+    .empty()
+    .append('Image Was Deleted');
   $('#deleteSurvey').trigger('reset');
   $('.surveysContainer')
-      .empty()
-      .show()
-      .append('That Survey was Deleted!');
-      $('#myModal6').modal('hide');
+    .empty()
+    .show()
+    .append('That Survey was Deleted!');
+  $('#myModal6').modal('hide');
 
 };
 
 const deleteSurveyFailure = (data) => {
   console.log("data is ", data);
   $('#signInBox')
-      .empty()
-      .append('That May Not Belong To You (Or It May Not Exist)');
+    .empty()
+    .append('That May Not Belong To You (Or It May Not Exist)');
 };
 
 const appendAnswerSuccess = (data) => {
   console.log(data);
   $('#signInBox')
-      .empty()
-      .append('Image URL Was Updated');
+    .empty()
+    .append('Image URL Was Updated');
   $('#appendAnswer').trigger('reset');
 };
 
 const appendAnswerFailure = (data) => {
   console.log(data);
   $('#signInBox')
-      .empty()
-      .append('Nope.  Something Went Wrong.');
+    .empty()
+    .append('Nope.  Something Went Wrong.');
 };
 
 const viewAllSurveysFailure = (data) => {
@@ -93,45 +105,55 @@ const changeTitleFailure = (data) => {
   console.log(data);
 };
 
+const answerCount = (arr) => {
+
+}
+
 const viewAllSurveysSuccess = (data) => {
-console.log(data);
+  console.log(data);
+  //
+  // need to transform survey answers to object with answer frequency counts
+  //
+  data.surveys.map(function(survey) {
+    console.log(survey);
+  })
   $('.surveysContainer').show().html(showImagesTemplate(data));
   $('#signInBox').empty();
   //creates a jquery click function
-    jQuery(function ($) {
-  //when this div class is clicked
-        $('.imageImage').click(function () {
-  //it empties and appends
-            $(".surveysContainer")
-              .empty()
-  //targets the html of this(the .imageImage DIV)
-              .html($(this).data('src', 'question'));
-              // .append($(this).data());
-              $(".surveysAnswers")
-                .empty()
-                .show().html(answersTemplate(data));
-                $('#answerAppend').on('submit', function () {
-                  event.preventDefault();
+  jQuery(function($) {
+    //when this div class is clicked
+    $('.imageImage').click(function() {
+      //it empties and appends
+      $(".surveysContainer")
+        .empty()
+        //targets the html of this(the .imageImage DIV)
+        .html($(this).data('src', 'question'));
+      // .append($(this).data());
+      $(".surveysAnswers")
+        .empty()
+        .show().html(answersTemplate(data));
+      $('#answerAppend').on('submit', function() {
+        event.preventDefault();
 
-                  let answer = $('#answerInput').val();
-                  let id = $('#surveyId').text();
-                  let survey = {
-                    survey: {
-                      id: id,
-                      answers: answer
-                    }
-                  };
-                  backendApi.appendAnswer(survey)
-                  .then(console.log)
-                  .catch(console.error);
-                  // return false;
-                });
-                // .append(FORM FOR ANSWERS NEEDS TO GO HERE)
-        });
-
-
-
+        let answer = $('#answerInput').val();
+        let id = $('#surveyId').text();
+        let survey = {
+          survey: {
+            id: id,
+            answers: answer
+          }
+        };
+        backendApi.appendAnswer(survey)
+          .then(console.log)
+          .catch(console.error);
+        // return false;
+      });
+      // .append(FORM FOR ANSWERS NEEDS TO GO HERE)
     });
+
+
+
+  });
 };
 
 

@@ -381,6 +381,10 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   margin-left: 5%;
 }
 
+#surveyId {
+  visibility: hidden;
+}
+
 .btn-default {
   margin-right: auto;
   margin-left: auto;
