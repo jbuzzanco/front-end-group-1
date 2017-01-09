@@ -29,7 +29,7 @@ const viewYourSurveysSuccess = (data) => {
     }, {});
     return survey;
   });
-  console.log(fixedData);
+  console.log("fixedData is", fixedData);
 
   $('#displayAllCurrentUsersSurveys').show().html(showYourSurveysTemplate(data));
   // $('#displayAllCurrentUsersSurveys').show().html(showYourSurveysTemplate(fixedData));
@@ -82,7 +82,9 @@ const appendAnswerSuccess = (data) => {
   $('#signInBox')
     .empty()
     .append('Image URL Was Updated');
-  $('#appendAnswer').trigger('reset');
+  $('.appendAnswer').trigger('reset');
+  $('.appendAnswer').hide();
+
 };
 
 const appendAnswerFailure = (data) => {
@@ -148,7 +150,7 @@ const viewAllSurveysSuccess = (data) => {
           .catch(console.error);
         // return false;
       });
-      // .append(FORM FOR ANSWERS NEEDS TO GO HERE)
+      // .append(FORM FOR S NEEDS TO GO HERE)
     });
 
 

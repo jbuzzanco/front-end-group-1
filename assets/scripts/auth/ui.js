@@ -90,6 +90,7 @@ const signOutSuccess = (data) => {
   $('#myModal4').modal('hide');
   $('.surveysContainer').empty();
   $('.img-container').empty();
+  $('.appendAnswer').hide();
 };
 
 const changePasswordFailure = () => {
