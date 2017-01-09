@@ -30,6 +30,8 @@ const viewYourSurveysSuccess = (data) => {
     return survey;
   });
   console.log("fixedData is", fixedData);
+  // console.log("fixedData is", fixedData.survey.answers);
+
 
   $('#displayAllCurrentUsersSurveys').show().html(showYourSurveysTemplate(data));
   // $('#displayAllCurrentUsersSurveys').show().html(showYourSurveysTemplate(fixedData));
@@ -118,7 +120,7 @@ const viewAllSurveysSuccess = (data) => {
   //
   data.surveys.map(function(survey) {
     console.log(survey);
-  })
+  });
   $('.surveysContainer').show().html(showImagesTemplate(data));
   $('#signInBox').empty();
   //creates a jquery click function
