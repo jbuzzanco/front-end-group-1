@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <script src="package.json" type="text/javascript" charset="utf-8" defer></script> -->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+  <!-- <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script> -->
+
+  <title>Surveymon</title>
+
+</head>
+
+<body>
+
+<!-- Navigation container STARTS here -->
+  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+<!-- Brand and toggle get grouped for better mobile display -->
+<!-- Button for Modal 4 only appears AFTER SIGN IN -->
+    <button id="createASurvey" class="btn btn-default test-button surveyOptions" data-toggle="modal" data-dismiss="modal" aria-hidden="true" href="#myModal5">Create Survey</button>
+    <button id="viewYourSurveysAndAnswers" class="btn btn-default test-button surveyOptions" data-toggle="modal" data-dismiss="modal" aria-hidden="true" href="#myModal6">Answers</button>
+<!-- This link appears on page load.  It is the first step to using website and goes to modal 1 to sign up or sign in -->
+    <a id="outANDin" class="navbar-brand" data-toggle="modal" href="#myModal1">Sign Up or Sign In</a>
+<!-- This div will SHAKE on sign in success.  Use it to append TEXT that you want to draw attention to -->
+    <div id="shakeHere" class="animated shake"></div>
+<!-- Button for View All Images goes to GET AJAX request and displays rows of thumbnails in Surveyscontainer DIV -->
+    <button id="viewAllSurveys" class="btn viewAllSurveys surveyOptions">View All Surveys!</button>
+<!-- Button which appears AFTER SIGN IN and will sign you out with AJAX request on click -->
+    <button id="sign-out-main" class="btn btn-default test-button">Sign Out</button>
+<!-- Link which opens MODAL 3 Change password modal -->
+    <a id="changePwrd-main" class="navbar-brand" data-toggle="modal" data-dismiss="modal" aria-hidden="true" href="#myModal3">Change Password</a>
+
+
+
+
+
+<br>
+  </nav>
+
+<!-- Navigation container ENDS here -->
+
+<!-- Page Content STARTS here -->
+
+  <div class="container">
+<!-- These keep the header (below) from being consumed by navbar when page shrinks -->
+<br>
+<br>
+<br>
+<!-- Portfolio Item Heading -->
+    <div class="row">
+      <div class="col-lg-12">
+        <h1 class="page-header">Surveymon</h1>
+      </div>
+    </div>
+<br>
+
+<!-- This is the div that viewAllSurveys button populates with thumbnails using AJAX GET REQUEST -->
+
+    <div class="surveysContainer"></div>
+    <div class="surveysAnswers"></div>
+
+<!-- This is where the FOOTER for the main page STARTS -->
+
+    <footer>
+      <div class="row">
+        <div class="col-lg-12">
+          <hr>
+          <p>Developed with my group "the-three-amigos" at GA Boston</p>
+          <p>"surveymon" thought of through using the npm package nodemon </p>
+        </div>
+      </div>
+    </footer>
+
+<!-- This is where the FOOTER for the main page ENDS -->
+
+<!-- This is where the main page CONTENT ENDS -->
+
+  </div>
+
+
+
+<!-- THESE ARE THE MODALS -->
+<!-- This is where all the AJAX requests link to -->
+
+<!--This is where MODAL 1 STARTS  Modal 1 is the Sign In Modal, which is accessed by the 'Sign Up or Sign In' link on the main page, visible on page load.  Modal 1 also has the link to access Sign Up in modal2-->
+
+    <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h4 class="options">Welcome to surveymon</h4>
+            <button id="sign-out" class="btn btn-default test-button">Sign Out</button>
+          </div>
+        <div class="modal-body">
+          <div class="containera">
+            <form id="sign-in">
+              <fieldset>
+                <legend>Sign In!</legend>
+                <input type="text" name="credentials[email]" placeholder="email address">
+                <input type="password" name="credentials[password]" placeholder="password">
+                <input type="submit" name="submit" value="Sign In!">
+              </fieldset>
+            </form>
+<br>
+        <div id="needAccountBox">
+<br>
+          <a id="needAccount" class="navbar-brand" data-toggle="modal" data-dismiss="modal" aria-hidden="true" href="#myModal2">New to surveymon? Sign Up here.</a>
+        </div>
+        </div>
+<br>
+<br>
+        <div id="signInBox">
+        </div>
+<br>
+
+          </div>
+    </div>
+      <div class="modal-footer">
+
+          </div>
+        </div>
+      </div>
+
+<!--This is where MODAL 1 ENDS-->
+
+<!--This is where MODAL 2 STARTS  Modal 2 is the Sign Up modal, which is accessed by the 'Need an Account' link in Modal 1-->
+
+    <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h4 class="options">Welcome to surveymon</h4>
+          </div>
+    <div class="modal-body">
+      <div class="containera">
+        <form id="sign-up">
+          <fieldset>
+            <legend>Sign Up!</legend>
+            <input type="text" name="credentials[email]" placeholder="email address">
+            <input type="password" name="credentials[password]" placeholder="password">
+            <input type="password" name="credentials[password_confirmation]" placeholder="confirm password">
+            <input type="submit" name="submit" value="Sign Up!">
+          </fieldset>
+        </form>
+      </div>
+    <div id="signUpBox"></div>
+</div>
+<div class="modal-footer">
+</div>
+        </div>
+      </div>
+    </div>
+<br>
+
+<!--This is where MODAL 2 ENDS-->
+
+<!--This is where MODAL 3 STARTS  Modal 3 is the change password modal and is accessed by clicking on the 'Change Password' link on any of the modals or on the main page -->
+
+    <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h4 class="options">User Options</h4>
+            <button id="sign-out-pwrd" class="btn btn-default test-button">Sign Out</button>
+          </div>
+    <div class="modal-body">
+      <div class="containerc">
+        <form id="change-password">
+          <fieldset>
+            <legend>Change Password!</legend>
+            <input type="password" name="passwords[old]" placeholder="Old Password">
+            <input type="password" name="passwords[new]" placeholder="New Password">
+            <input type="submit" name="submit" value="Change Password!">
+          </fieldset>
+        </form>
+      </div>
+    <div id="changePasswordBox"></div>
+    </div>
+    <div class="modal-footer">
+    </div>
+        </div>
+      </div>
+    </div>
+
+<!--This is where MODAL 3 ENDS-->
+
+<!--This is where MODAL 4 STARTS Modal 4 opens by clicking the 'Your Surveys' button on the main page.  The 'Your Surveys' button only appears on Sign In success -->
+
+    <div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+                <button id="sign-out-modal-four" class="btn btn-default test-button" data-dismiss="modal" aria-hidden="true">Sign Out</button>
+                  <a id="changePwrd" class="navbar-brand" data-toggle="modal" data-dismiss="modal" aria-hidden="true" href="#myModal3">Change Password</a>
+          </div>
+        <div class="modal-body">
+          <div id="seeYourSurveys">
+          <button id="viewYourSurveysAndAnswers" class="btn btn-default test-button" data-toggle="modal" data-dismiss="modal" aria-hidden="true" href="#myModal6">View Answers</button>
+          <button id="createASurvey" class="btn btn-default test-button" data-toggle="modal" data-dismiss="modal" aria-hidden="true" href="#myModal5">Create Survey</button>
+          </div>
+        </div>
+
+          <div class="modal-footer">
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!-- This is where MODAL 4 ENDS -->
+
+<!--This is where MODAL 5 STARTS.  Modal 5 only appears on Sign In success/which opens Modal 4.  Modal 5 opens by clicking the 'Create A Survey' button within MODAL 4 -->
+
+    <div class="modal fade" id="myModal5" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+              <button id="seeYourSurveysAndAnswers-modal-5" class="btn btn-default test-button" data-toggle="modal" data-dismiss="modal" aria-hidden="true" href="#myModal6">View Answers</button>
+                <button id="sign-out-modal-five" class="btn btn-default test-button" data-dismiss="modal" aria-hidden="true">Sign Out</button>
+                  <a id="changePwrd-modal-5" class="navbar-brand" data-toggle="modal" data-dismiss="modal" aria-hidden="true" href="#myModal3">Change Password</a>
+          </div>
+        <div class="modal-body">
+          <div id="appendQuestion">
+            <form id="questionAppend">
+              <fieldset>
+                <legend>Enter Question HERE</legend>
+                <input type="text" name="survey[title]" placeholder="Title">
+                <input type="text" name="survey[question]" placeholder="Question">
+                <input type="submit" name="submit" value="Append Question!">
+              </fieldset>
+            </form>
+          </div>
+          <div id="surveyBox"></div>
+
+        </div>
+
+          <div class="modal-footer">
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!-- This is where MODAL 5 ENDS -->
+
+<!--This is where MODAL 6 STARTS.  Modal 5 only appears on Sign In success/which opens Modal 4.  Modal 6 opens by clicking the 'seeYourSurveysAndAnswers' button within MODAL 4 -->
+
+    <div class="modal fade" id="myModal6" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+                <button id="createASurvey-modal-6" class="btn btn-default test-button" data-toggle="modal" data-dismiss="modal" aria-hidden="true" href="#myModal5">Create Survey</button>
+                  <button id="sign-out-modal-six" class="btn btn-default test-button" data-dismiss="modal" aria-hidden="true">Sign Out</button>
+                    <a id="changePwrd-modal-6" class="navbar-brand" data-toggle="modal" data-dismiss="modal" aria-hidden="true" href="#myModal3">Change Password</a>
+          </div>
+        <div class="modal-body">
+          <div id="displayAllCurrentUsersSurveys">
+          </div>
+        </div>
+
+
+        </div>
+          <div class="modal-footer">
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!-- This is where MODAL 6 ENDS -->
+
+<!-- This is the end of the BODY AND HTML OF THE ENTIRE WEBSITE - so don't go messing with it -->
+
+</body>
+
+</html>
