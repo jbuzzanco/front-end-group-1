@@ -10,7 +10,7 @@
   <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
   <!-- <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script> -->
 
-  <title>Survey Thingy</title>
+  <title>Surveymon</title>
 
 </head>
 
@@ -20,17 +20,23 @@
   <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 <!-- Brand and toggle get grouped for better mobile display -->
 <!-- Button for Modal 4 only appears AFTER SIGN IN -->
-    <button id="surveyOptions" class="btn btn-default test-button" data-toggle="modal" data-dismiss="modal" aria-hidden="true" href="#myModal4">Your Surveys</button>
+    <button id="createASurvey" class="btn btn-default test-button surveyOptions" data-toggle="modal" data-dismiss="modal" aria-hidden="true" href="#myModal5">Create Survey</button>
+    <button id="viewYourSurveysAndAnswers" class="btn btn-default test-button surveyOptions" data-toggle="modal" data-dismiss="modal" aria-hidden="true" href="#myModal6">Answers</button>
 <!-- This link appears on page load.  It is the first step to using website and goes to modal 1 to sign up or sign in -->
     <a id="outANDin" class="navbar-brand" data-toggle="modal" href="#myModal1">Sign Up or Sign In</a>
 <!-- This div will SHAKE on sign in success.  Use it to append TEXT that you want to draw attention to -->
     <div id="shakeHere" class="animated shake"></div>
 <!-- Button for View All Images goes to GET AJAX request and displays rows of thumbnails in Surveyscontainer DIV -->
-    <button id="viewAllSurveys" class="btn btn-default test-button">View All Surveys!</button>
+    <button id="viewAllSurveys" class="btn viewAllSurveys surveyOptions">View All Surveys!</button>
 <!-- Button which appears AFTER SIGN IN and will sign you out with AJAX request on click -->
     <button id="sign-out-main" class="btn btn-default test-button">Sign Out</button>
 <!-- Link which opens MODAL 3 Change password modal -->
     <a id="changePwrd-main" class="navbar-brand" data-toggle="modal" data-dismiss="modal" aria-hidden="true" href="#myModal3">Change Password</a>
+
+
+
+
+
 <br>
   </nav>
 
@@ -46,7 +52,7 @@
 <!-- Portfolio Item Heading -->
     <div class="row">
       <div class="col-lg-12">
-        <h1 class="page-header">Answer These Questions.  Or Else.</h1>
+        <h1 class="page-header">Surveymon</h1>
       </div>
     </div>
 <br>
@@ -62,7 +68,8 @@
       <div class="row">
         <div class="col-lg-12">
           <hr>
-          <p>Copyright &copy; Survey Thingy</p>
+          <p>Developed with my group "the-three-amigos" at GA Boston</p>
+          <p>"surveymon" thought of through using the npm package nodemon </p>
         </div>
       </div>
     </footer>
@@ -85,7 +92,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <button class="close" data-dismiss="modal" aria-hidden="true">×</button>
-            <h4 class="options">User Options</h4>
+            <h4 class="options">Welcome to surveymon</h4>
             <button id="sign-out" class="btn btn-default test-button">Sign Out</button>
           </div>
         <div class="modal-body">
@@ -101,7 +108,7 @@
 <br>
         <div id="needAccountBox">
 <br>
-          <a id="needAccount" class="navbar-brand" data-toggle="modal" data-dismiss="modal" aria-hidden="true" href="#myModal2">Need An Account?</a>
+          <a id="needAccount" class="navbar-brand" data-toggle="modal" data-dismiss="modal" aria-hidden="true" href="#myModal2">New to surveymon? Sign Up here.</a>
         </div>
         </div>
 <br>
@@ -127,7 +134,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-            <h4 class="options">User Options</h4>
+            <h4 class="options">Welcome to surveymon</h4>
           </div>
     <div class="modal-body">
       <div class="containera">

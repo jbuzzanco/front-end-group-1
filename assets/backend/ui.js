@@ -109,9 +109,6 @@ const changeTitleFailure = (data) => {
   console.log(data);
 };
 
-const answerCount = (arr) => {
-
-}
 
 const viewAllSurveysSuccess = (data) => {
   console.log(data);
@@ -123,6 +120,8 @@ const viewAllSurveysSuccess = (data) => {
   });
   $('.surveysContainer').show().html(showImagesTemplate(data));
   $('#signInBox').empty();
+  $('.appendAnswer').hide();
+
   //creates a jquery click function
   jQuery(function($) {
     //when this div class is clicked

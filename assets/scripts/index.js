@@ -20,7 +20,7 @@ $(() => {
   backEndEvents.addClueHandlers();
   // backEndApi.viewAllSurveys();
   $('#signInBox').hide();
-  $('#shakeHere').show().empty().append(' <-- Want To Make Your Own Survey?');
+  $('#shakeHere').show().empty().append(' <-- Log in to make your Own Survey');
   // $('.surveysContainer').hide();
 //links
   $('#changePwrd').hide();
@@ -31,5 +31,6 @@ $(() => {
   $('#sign-out').hide();
   $('#sign-out-main').hide();
   $('#surveyBox').hide();
+  $('.surveyOptions').hide();
 
 });

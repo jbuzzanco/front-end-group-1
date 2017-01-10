@@ -77,7 +77,6 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 #changePasswordBox {
   width: 100%;
   height: 30px;
-  text-shadow: 5px 5px 5px blue;
   font-size: 150%;
   background-color: white;
   display: flex;
@@ -88,7 +87,6 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 #signUpBox {
   width: 100%;
   height: 70px;
-  text-shadow: 5px 5px 5px blue;
   font-size: 115%;
   background-color: white;
   display: flex;
@@ -99,7 +97,6 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 #surveyBox {
   width: 100%;
   height: 70px;
-  text-shadow: 5px 5px 5px blue;
   font-size: 115%;
   background-color: white;
   display: flex;
@@ -110,7 +107,6 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 #signInBox {
   width: 100%;
   height: 30px;
-  text-shadow: 5px 5px 5px blue;
   font-size: 150%;
   background-color: white;
   display: flex;
@@ -219,7 +215,6 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 #sign-out-main {
   text-color: white;
-  text-shadow: 2px 2px white;
   justify-content: center;
   align-items: center;
   float: right;
@@ -229,7 +224,6 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 #sign-out-pwrd {
   text-color: white;
-  text-shadow: 2px 2px white;
   justify-content: center;
   align-items: center;
   float: right;
@@ -239,7 +233,6 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 #sign-out-modal-four {
   text-color: white;
-  text-shadow: 2px 2px white;
   justify-content: center;
   align-items: center;
   float: right;
@@ -249,7 +242,6 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 #sign-out-modal-five {
   text-color: white;
-  text-shadow: 2px 2px white;
   justify-content: center;
   align-items: center;
   float: right;
@@ -259,7 +251,6 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 #sign-out-modal-six {
   text-color: white;
-  text-shadow: 2px 2px white;
   justify-content: center;
   align-items: center;
   float: right;
@@ -269,7 +260,6 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 #sign-out {
   text-color: white;
-  text-shadow: 2px 2px white;
   justify-content: center;
   align-items: center;
   float: right;
@@ -278,7 +268,6 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 #changePwrd {
   text-color: white;
-  text-shadow: 2px 2px white;
   font-size: 75%;
   display: flex;
   justify-content: center;
@@ -299,7 +288,6 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 #changePwrd-modal-5 {
   text-color: white;
-  text-shadow: 2px 2px white;
   font-size: 75%;
   display: flex;
   justify-content: center;
@@ -310,7 +298,6 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 #changePwrd-modal-6 {
   text-color: white;
-  text-shadow: 2px 2px white;
   font-size: 75%;
   display: flex;
   justify-content: center;
@@ -322,7 +309,6 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 #createASurvey {
   width: 20%;
   text-color: white;
-  text-shadow: 2px 2px white;
   justify-content: center;
   align-items: center;
   // margin-left: 0%;
@@ -332,7 +318,6 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 #createASurvey-modal-6 {
   width: 20%;
   text-color: white;
-  text-shadow: 2px 2px white;
   float: left;
   justify-content: center;
   align-items: center;
@@ -342,7 +327,6 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 #seeYourSurveysAndAnswers {
   width: 20%;
   text-color: white;
-  text-shadow: 2px 2px white;
   justify-content: center;
   align-items: center;
   // margin-left: 15%;
@@ -352,7 +336,6 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 #viewYourSurveysAndAnswers {
   width: 20%;
   text-color: white;
-  text-shadow: 2px 2px white;
   justify-content: center;
   align-items: center;
   // margin-left: 15%;
@@ -362,7 +345,6 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 #viewYourSurveys {
   width: 20%;
   text-color: white;
-  text-shadow: 2px 2px white;
   float: left;
   justify-content: center;
   align-items: center;
@@ -371,7 +353,6 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 #surveyOptions {
   text-color: white;
-  text-shadow: 2px 2px white;
   // display: flex;
   justify-content: center;
   align-items: center;
@@ -379,6 +360,21 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   margin-top: 8px;
   margin-bottom: 2px;
   margin-left: 5%;
+}
+
+.surveyOptions {
+  text-color: white;
+  // display: flex;
+  justify-content: center;
+  align-items: center;
+  float: left;
+  margin-top: 8px;
+  margin-bottom: 2px;
+  margin-left: 5%;
+}
+
+.viewAllSurveys {
+  background-color: cornflowerblue;
 }
 
 #surveyId {
@@ -392,28 +388,25 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 .btn-primary {
   background: black;
-  text-shadow: 2px 2px 5px white;
   height: 40px;
   margin-left: 45%;
   margin-right: 45%;
   width: 10%;
 }
 
-#viewAllSurveys {
-  text-color: white;
-  text-shadow: 2px 2px white;
-  // display: flex;
-  justify-content: center;
-  align-items: center;
-  float: right;
-  margin-right: 5%;
-  margin-top: 8px;
-  margin-bottom: 2px;
-}
+// #viewAllSurveys {
+//   text-color: white;
+//   // display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   float: right;
+//   margin-right: 5%;
+//   margin-top: 8px;
+//   margin-bottom: 2px;
+// }
 
 #close {
   text-color: gray;
-  text-shadow: 2px 2px white;
   justify-content: center;
   align-items: center;
   float: right;
