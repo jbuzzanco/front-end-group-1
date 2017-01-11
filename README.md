@@ -15,14 +15,15 @@ Install dependencies with `npm install`.
 
 ## TECHNOLOGIES USED
 
-HTML5
-CSS3
-Bootstrap
-MongoDB
-Express API
-Mongoose
-node.js
-JavaScript
+* HTML5
+* Bootstrap
+* CSS3
+* MongoDB
+* Express API
+* Mongoose
+* JavaScript
+* Node.js
+* Handlebars
 
 ## GENERAL APPROACH
 
@@ -30,21 +31,24 @@ Three-person team utilized Agile development methodologies and tri-coding for tr
 
 ## UNSOLVED PROBLEMS
 
-- An unauthenticated survey-taker needs to be able to answer/respond to a survey
-- A survey author needs to be able to view the answers/responses associated with the surveys he/she has created.
-- An author needs to be able to delete a survey from the client. (can currently do so via curl request)
-- An author needs to be able to update the title of his/her survey via client (can currently do so via curl request).
+* can improve visual design aesthetic have better User Experience rather than just a functioning application.
+  * colors
+  * fonts
+  * formatting
+* have more ui success messages
+  * on answer append
+* close out of modals on success
 
 ## USER STORIES
 
-As a user, I want to be able to sign up.
-As a user, I want to be able to sign in.
-As a user, I want to be able to change my pw.
-As a user, I want to be able to sign out.
-As a user, I want to be able to create a survey.
-As a user, I want to be able to see the responses to my surveys.
-As a user, I want to be able to edit my survey.
-As a user, I want to be able to delete my survey.
+* As a user, I want to be able to sign up.
+* As a user, I want to be able to sign in.
+* As a user, I want to be able to change my pw.
+* As a user, I want to be able to sign out.
+* As a user, I want to be able to create a survey.
+* As a user, I want to be able to see the responses to my surveys.
+* As a user, I want to be able to edit my survey.
+* As a user, I want to be able to delete my survey.
 
 ## ERD:
 http://imgur.com/gS6lYdk
